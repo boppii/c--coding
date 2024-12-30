@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.VisualBasic;
-
+using System.Linq;
 //oh god
 
 namespace battle
@@ -32,7 +32,28 @@ namespace battle
 				return fuck;
 		}
 		
-		
+		public static int monvals(string statsel)
+		{
+			string[] test = ["atk", "hp", "def",];
+			//3rd time lol
+			Random rand = new();
+			int stat = rand.Next(0, 50);
+			int lvl = rand.Next(0, 100) / 5; //lvl is 0 to 100 split into 5 chunks
+			
+			if (test.Contains(statsel))
+			{
+				return stat;
+			}
+			else if (statsel == "lvl")
+			{
+				return lvl;
+			}
+			else
+			{
+				Console.WriteLine("dummy you didnt do the correct input to statsel");
+				return 0;
+			}
+		}
 		
 		
 		

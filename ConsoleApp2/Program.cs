@@ -14,12 +14,12 @@ namespace battle
 {
 	public class Program
 	{
-		public static string Randname()
+		public static string Randname() //gen 6 random ascii charecters
 		{
 			//init rand gen again :3
 			Random rand = new();
 			char[] name = new char[6];
-				for (int i = 0; i < name.Length; i++)
+				for (int i = 0; i < name.Length; i++) 
 				{
 					int a;
 					char b;
@@ -31,7 +31,7 @@ namespace battle
 					
 					
 				}
-				string? fuck = new string(name);
+				string? fuck = new string(name); //sting array to sting? i dont rlly know how this works but it does
 				return fuck;
 		}
 		
@@ -43,7 +43,7 @@ namespace battle
 			int stat = rand.Next(0, 50);
 			int lvl = rand.Next(0, 100) / 5; //lvl is 0 to 100 split into 5 chunks
 			
-			if (test.Contains(statsel))
+			if (test.Contains(statsel)) //compare input to string array (i am so glad i found out you could do this)
 			{
 				return stat;
 			}

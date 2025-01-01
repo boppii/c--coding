@@ -5,14 +5,21 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.VisualBasic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+
+
 
 //oh god
+
+
+
 
 
 
 namespace battle
 {
 	public class Program
+
 	{
 		public static string Randname() //gen 6 random ascii charecters
 		{
@@ -58,7 +65,8 @@ namespace battle
 			}
 		}
 		
-		
+
+
 		
 		
 		
@@ -74,31 +82,36 @@ namespace battle
 			int enemy_def;
 			int enemy_lvl;
 			
-			Console.WriteLine("Claire's weird thing \n Press 1 to generate new monters. \n \n");
+			Console.WriteLine("Claire's weird thing \n Press 1 to generate new monters. \n");
+			Console.WriteLine(" Press 0 to exit. \n\n");
+			ConsoleKeyInfo Key = GetInput();
 
 
-
-
-			
 			//generate monsters
 			
-			
-			
-			string? test = "1";
-			while (test == Console.ReadLine())
+			while (Key.KeyChar == '1')
 			{
-				string fuck = Randname();
 				
+				
+				string fuck = Randname(); //i would like to consolidate this to its own function but i do not know how to do that currently
 				int hp = monvals("hp");
 				int atk = monvals("atk");
 				int def = monvals("def");
 				int lvl = monvals("lvl");
 				
-				Console.WriteLine("monster gened :3 \n\n name: " + fuck + "\nhp" + hp + "\natk: " + atk+ "\ndef: " + def + "\nlvl " + lvl);
-				
-				
-				
+				Console.Clear();
+				Console.WriteLine("\nmonster gened :3 \n\nname: " + fuck + "\nhp: " + hp + "\natk: " + atk+ "\ndef: " + def + "\nlvl " + lvl + "\n");
+				Console.WriteLine("Press 1 to gen again.\nPress 0 to exit.");
+				Key = GetInput();
+
 			}
+			Environment.Exit(0);
+		}
+		public static ConsoleKeyInfo GetInput() //better way of doing user input
+		{
+			ConsoleKeyInfo Keypressed = Console.ReadKey(true);
+			int LR, UD;
+			return Keypressed;
 			
 		}
 	}

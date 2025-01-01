@@ -5,7 +5,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using Microsoft.VisualBasic;
 using System.Linq;
+
 //oh god
+
+
 
 namespace battle
 {
@@ -65,30 +68,35 @@ namespace battle
 			Random rand = new();
 
 			//Monster maker
-			//init monster variables
-			int hp;
-			int atk;
-			int def;
-			int lvl;
-			//
-			//Enemy varables init
+			//Enemy varables init (moving them somewhere else later)
 			int enemy_hp;
 			int enemy_atk;
 			int enemy_def;
 			int enemy_lvl;
-			//
+			
 			Console.WriteLine("Claire's weird thing \n Press 1 to generate new monters. \n \n");
+
+
+
+
+			
 			//generate monsters
+			
+			
+			
 			string? test = "1";
 			while (test == Console.ReadLine())
 			{
 				string fuck = Randname();
 				
-				hp = rand.Next(0, 50);
-				atk = rand.Next(0, 50);
-				def = rand.Next(0, 50);
-				lvl = rand.Next(0, 100) / 5; //lvl is 0 to 100 split into 5 chunks
-				Console.WriteLine("\n name: " + fuck + "\n hp: " + hp + "\n atk: " + atk + "\n def: " + def + "\n lvl: " + lvl + "\n");
+				int hp = monvals("hp");
+				int atk = monvals("atk");
+				int def = monvals("def");
+				int lvl = monvals("lvl");
+				
+				Console.WriteLine("monster gened :3 \n\n name: " + fuck + "\nhp" + hp + "\natk: " + atk+ "\ndef: " + def + "\nlvl " + lvl);
+				
+				
 				
 			}
 			

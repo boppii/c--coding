@@ -1,11 +1,36 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "ConsoleGUI/1.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ConsoleGUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ConsoleGUI.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "ConsoleGUI/1.4.2": {
+      "sha512": "xLJW4hsnybSDYUzxQQRv4rcEQsgln9GZh+/Zk4bbNV2EBbgB++XOnwyzLlsIiMiJxUivyo1tls251Xf7zaU9ag==",
+      "type": "package",
+      "path": "consolegui/1.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "consolegui.1.4.2.nupkg.sha512",
+        "consolegui.nuspec",
+        "lib/netstandard2.0/ConsoleGUI.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "ConsoleGUI >= 1.4.2"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\bopbd\\.nuget\\packages\\": {},
@@ -51,11 +76,17 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "ConsoleGUI": {
+            "target": "Package",
+            "version": "[1.4.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -67,12 +98,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.17, 8.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.17, 8.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.17, 8.0.17]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.17, 8.0.17]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
